@@ -18,7 +18,7 @@
 var _ = require('lodash');
 var url = require('url');
 var extend = require('extend');
-var uuid = require('node-uuid');
+var uuid = require('uuid');
 
 var utils = module.exports = {};
 
