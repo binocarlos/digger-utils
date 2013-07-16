@@ -18,7 +18,7 @@
 var _ = require('lodash');
 var url = require('url');
 var extend = require('extend');
-var uuid = require('uuid');
+var hat = require('hat');
 
 var utils = module.exports = {};
 
@@ -27,7 +27,7 @@ var utils = module.exports = {};
  */
 
 utils.diggerid = function(){
-  return uuid.v1().replace(/-/g, '');
+  return hat();
 }
 
 utils.littleid = function(){
