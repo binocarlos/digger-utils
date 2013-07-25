@@ -15,11 +15,9 @@
 /*
   Module dependencies.
 */
-var _ = require('lodash');
-var url = require('url');
+
 var extend = require('extend');
 var hat = require('hat');
-
 var utils = module.exports = {};
 
 /**
@@ -30,9 +28,15 @@ utils.diggerid = function(){
   return hat();
 }
 
-utils.littleid = function(){
+utils.littleid = function(chars){
 
-  var pattern = 'xxxxxx';
+  chars = chars || 6;
+
+  var pattern = '';
+
+  for(var i=0; i<chars; i++){
+    pattern += 'x';
+  }
   
   return pattern.replace(/[xy]/g, function(c) {
     var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -63,46 +67,6 @@ utils.escape = function(html){
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 };
-
-/**
- * Parse the `req` url with memoization.
- *
- * @param {ServerRequest} req
- * @return {Object}
- * @api private
- */
-
-utils.parseUrl = function(req){
-  var parsed = req._parsedUrl;
-  if (parsed && parsed.href == req.url) {
-    return parsed;
-  } else {
-    return req._parsedUrl = url.parse(req.url);
-  }
-};
-
-/*
-
-  make a route - optionally replace the '/'s with delimeter
-  
-*/
-utils.makeroute = function(parts, delimeter){
-
-  var route = _.filter(parts || [], function(part){
-    return _.isNumber(part) || !_.isEmpty(part);
-  }).join('/');
-
-  if(delimeter){
-    route = route.replace(/\//g, delimeter);
-    if(route.indexOf(delimeter)===0){
-      route = route.substr(1);
-    }
-  }
-
-  return route.replace(/\/\//g, '/');
-}
-
-
 
 /**
  * jQuery Deep extend
