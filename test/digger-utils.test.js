@@ -7,6 +7,7 @@ describe('digger-utils', function(){
 
 		id.should.be.a('string');
 		id.length.should.equal(32);
+		console.log(id);
 	})
 
 	it('should produce a littleid', function() {
@@ -14,6 +15,7 @@ describe('digger-utils', function(){
 
 		id.should.be.a('string');
 		id.length.should.equal(6);
+		console.log(id);
 	})
 	it('should extend objects', function() {
 		var a = {
