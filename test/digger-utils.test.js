@@ -17,6 +17,7 @@ describe('digger-utils', function(){
 		id.length.should.equal(6);
 		console.log(id);
 	})
+	
 	it('should extend objects', function() {
 		var a = {
 			top:{

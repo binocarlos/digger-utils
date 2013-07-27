@@ -52,6 +52,19 @@ utils.escapeRegexp = function(search){
   return search.replace(/([\!\$\(\)\*\+\.\/\:\=\?\[\\\]\^\{\|\}])/g, "\\$1");
 }
 
+/*
+
+  return a pure JS version of a HTTP request
+  
+*/
+utils.json_request = function(req){
+  return {
+    method:req.method.toLowerCase(),
+    url:req.url,
+    body:req.body,
+    headers:req.headers
+  }
+}
 
 /**
  * jQuery Deep extend

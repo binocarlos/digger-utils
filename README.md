@@ -41,6 +41,27 @@ var escaped = utils.escapeRegexp(match);
 // escaped = \{\[\]\}
 ```
 
+## json_request
+returns a pure javascript object representing the passed HTTP req
+
+```js
+var utils = require('digger-utils');
+
+// GET /apples.html
+
+app.use(function(req, res, next){
+	var json = utils.json_request(req);
+
+	/*
+		{
+			method:'get',
+			url:'/apples.html'
+		}
+	*/
+})
+
+```
+
 ## extend
 
 uses the [extend](https://github.com/justmoon/node-extend) module so we can deep extend objects
