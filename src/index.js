@@ -66,6 +66,15 @@ utils.json_request = function(req){
   }
 }
 
+/*
+
+  is arr actually an array
+  
+*/
+utils.isArray = function(arr){
+  return Object.prototype.toString.call(arr) == '[object Array]';
+}
+
 /**
  * jQuery Deep extend
  */

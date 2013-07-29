@@ -7,7 +7,6 @@ describe('digger-utils', function(){
 
 		id.should.be.a('string');
 		id.length.should.equal(32);
-		console.log(id);
 	})
 
 	it('should produce a littleid', function() {
@@ -15,7 +14,22 @@ describe('digger-utils', function(){
 
 		id.should.be.a('string');
 		id.length.should.equal(6);
-		console.log(id);
+	})
+
+	it('should check arrays', function() {
+		var arr = [3,4,3];
+		var bool = true;
+		var string = '34343';
+		var num = 3434;
+		var object = {};
+		var fn = function(){}
+
+		utils.isArray(arr).should.equal(true);
+		utils.isArray(bool).should.equal(false);
+		utils.isArray(string).should.equal(false);
+		utils.isArray(num).should.equal(false);
+		utils.isArray(object).should.equal(false);
+		utils.isArray(fn).should.equal(false);
 	})
 	
 	it('should extend objects', function() {
