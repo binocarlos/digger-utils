@@ -75,6 +75,15 @@ utils.isArray = function(arr){
   return Object.prototype.toString.call(arr) == '[object Array]';
 }
 
+/*
+
+  return an array version of arguments
+  
+*/
+utils.toArray = function(args){
+  return Array.prototype.slice.call(args, 0);
+}
+
 /**
  * jQuery Deep extend
  */

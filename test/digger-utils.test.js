@@ -31,6 +31,18 @@ describe('digger-utils', function(){
 		utils.isArray(object).should.equal(false);
 		utils.isArray(fn).should.equal(false);
 	})
+
+	it('should convert args to arrays', function() {
+		function testfn(){
+			var args = utils.toArray(arguments);
+
+			utils.isArray(args).should.equal(true);
+			args[1].should.equal(34);
+		}
+
+		testfn(20, 34, 56);
+	})
+	
 	
 	it('should extend objects', function() {
 		var a = {
