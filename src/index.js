@@ -84,6 +84,37 @@ utils.toArray = function(args){
   return Array.prototype.slice.call(args, 0);
 }
 
+/*
+
+  turn a digger url string into an object with:
+
+    * action (read | write)
+    * supplier_method (select | append | save | remove)
+    * diggerid (a digger context extracted from the url)
+    * selector (a single phase of selectors extracted from the url)
+  
+*/
+utils.parse_request = function(method, url){
+
+}
+
+/*
+
+  exports a user object but removing its private fields first
+  
+*/
+utils.export_user = function(user){
+  var ret = {};
+
+  for(var prop in user){
+    if(prop.charAt(0)!='_'){
+      ret[prop] = user[prop];
+    }
+  }
+
+  return ret;
+}
+
 /**
  * jQuery Deep extend
  */

@@ -42,7 +42,21 @@ describe('digger-utils', function(){
 
 		testfn(20, 34, 56);
 	})
-	
+
+	it('should export a user stripping its private fields', function(){
+
+		var user = {
+			name:'test',
+			height:34,
+			_keys:{
+				private:3434
+			}
+		}
+
+		var exported = utils.export_user(user);
+
+		(exported._keys===undefined).should.equal(true);
+	})
 	
 	it('should extend objects', function() {
 		var a = {
