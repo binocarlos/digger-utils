@@ -44,6 +44,15 @@ utils.littleid = function(chars){
   });
 }
 
+/*
+
+  tells you if a string is a digger id or not
+  
+*/
+utils.isdiggerid = function(id){
+  return (id && id.match(/^\w{32}$/)) ? true : false;
+}
+
 /**
  * takes a string and prepares it to be used in a RegExp itself
  */

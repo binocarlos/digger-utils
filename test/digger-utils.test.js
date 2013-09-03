@@ -32,6 +32,12 @@ describe('digger-utils', function(){
 		utils.isArray(fn).should.equal(false);
 	})
 
+	it('should tell the difference between a digger id and selector string', function(){
+
+		utils.isdiggerid('thing.class').should.equal(false);
+		utils.isdiggerid(utils.diggerid()).should.equal(true);
+	})
+
 	it('should convert args to arrays', function() {
 		function testfn(){
 			var args = utils.toArray(arguments);
