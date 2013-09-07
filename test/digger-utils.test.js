@@ -63,6 +63,31 @@ describe('digger-utils', function(){
 
 		(exported._keys===undefined).should.equal(true);
 	})
+
+	it('should combine tree results', function(){
+		var arr = [{
+			a:10,
+			_digger:{
+				diggerid:3,
+				diggerparentid:2
+			}
+		},{
+			a:11,
+			_digger:{
+				diggerid:2
+			}
+		},{
+			a:12,
+			_digger:{
+				diggerid:10
+			}
+		}]
+
+		var results = utils.combine_tree_results(arr);
+		results.length.should.equal(2);
+		results[0]._children[0].a.should.equal(10);
+
+	})
 	
 	it('should extend objects', function() {
 		var a = {

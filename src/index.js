@@ -129,3 +129,42 @@ utils.export_user = function(user){
  */
 
 utils.extend = extend;
+
+/*
+
+   takes a list of containers and appends ones that find their parent in the list
+  
+*/
+utils.combine_tree_results = function(results){
+  
+
+  if(!results || results.length==0){
+    return [];
+  }
+
+  var arrresults = utils.toArray(results);
+
+  var results_map = {};
+  // this list of top layer containers
+  var top = [];
+
+  // loop each result and it's links to see if we have a parent in the original results
+  // or in these results
+  results.forEach(function(result){
+    results_map[result._digger.diggerid] = result;
+  })
+
+  results.forEach(function(result){
+    var parent = results_map[result._digger.diggerparentid];
+
+    if(parent){
+      parent._children = parent._children || [];
+      parent._children.push(result);
+    }
+    else{
+      top.push(result);
+    }
+  })
+
+  return top;
+}
