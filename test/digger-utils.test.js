@@ -16,6 +16,18 @@ describe('digger-utils', function(){
 		id.length.should.equal(6);
 	})
 
+	it('should tell us if an object is empty', function() {
+
+		var obj = {};
+
+		utils.is_object_empty(obj).should.equal(true);
+
+		obj.hello = 'world';
+
+		utils.is_object_empty(obj).should.equal(false);
+		
+	})
+
 	it('should check arrays', function() {
 		var arr = [3,4,3];
 		var bool = true;

@@ -109,6 +109,15 @@ utils.parse_request = function(method, url){
 
 /*
 
+  does an object have some keys
+  
+*/
+utils.is_object_empty = function(obj){
+  return Object.keys(obj).length<=0;
+}
+
+/*
+
   exports a user object but removing its private fields first
   
 */
