@@ -1,10 +1,18 @@
 # digger-utils
 
+![Build status](https://api.travis-ci.org/binocarlos/digger-utils.png)
+
 Small utils library shared between the digger.io and digger libraries
 
 # install
 
+as a node module:
+
 	$ npm install digger-utils
+
+as a [component](https://github.com/component/component):
+
+	$ component install binocarlos/digger-utils
 
 # methods
 
