@@ -1,0 +1,20 @@
+{
+  "name": "digger-utils",
+  "repo": "binocarlos/digger-utils",
+  "description": "Small utils library shared between the digger.io and digger libraries",
+  "version": "0.0.1",
+  "keywords": [
+    
+  ],
+  "dependencies": {
+    "binocarlos/extend": "*",
+    "binocarlos/hat": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "src/index.js",
+  "styles": [],
+  "scripts": [
+    "src/index.js"
+  ]
+}

@@ -133,4 +133,26 @@ describe('digger-utils', function(){
 		a.top.middle.valb.should.equal(11);
 		a.top.middle.bottom.valb.should.equal(11);
   })
+
+  it('should inherit classes', function() {
+		function Parent(){
+
+		}
+
+		Parent.prototype.hello = function(){
+			return 'world';
+		}
+
+		function Child(){
+
+		}
+
+		utils.inherits(Child, Parent);
+
+		var child = new Child();
+
+		var st = child.hello();
+
+		st.should.equal('world');
+  })
 })
