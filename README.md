@@ -29,6 +29,9 @@ var id = utils.littleid();
 // id = d0cd49
 ```
 
+## isdiggerid
+A naive test to see if a string is a digger id (by checking the length - needs work)
+
 ## escapeRegexp
 parses a string so it will match literally in a regular expression
 
@@ -62,9 +65,33 @@ app.use(function(req, res, next){
 
 ```
 
+## isArray
+Returns true is the passed argument is actually an array
+
+## toArray
+Converts the given argument into an array (useful for 'arguments')
+
+## is_object_empty
+Returns true if the given object has no keys
+
+## strip_private_fields
+Removes any field starting with an '_' from the given object
+
 ## extend
 
 uses the [extend](https://github.com/justmoon/node-extend) module so we can deep extend objects
+
+## combine_tree_results
+takes a list of containers and appends ones that find their parent in the list
+
+```js
+var flat_list_of_containers = [...];
+
+var tree_of_containers = utils.combine_tree_results(flat_list_of_containers);
+```
+
+## inherits
+A copy of node utils.inherits for inheriting classes
 
 # licence
 

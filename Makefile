@@ -1,18 +1,24 @@
-TESTS = test/*.js
-REPORTER = spec
-#REPORTER = dot
+install:
+	@npm install
 
-check: test
+build: install
+	@echo build ...
+	@./node_modules/.bin/component-install
+	@./node_modules/.bin/component-build
 
-test:
+browser-test: build
+	@echo browser test ...
+	@./node_modules/mocha-phantomjs/bin/mocha-phantomjs test/test-runner.html
+
+server-test:
+	@echo server test
 	@NODE_ENV=test ./node_modules/.bin/mocha \
-		--reporter $(REPORTER) \
+		--reporter spec \
 		--timeout 300 \
 		--require should \
 		--growl \
-		$(TESTS)
+		test/test.js
 
-install:
-	npm install
+test: browser-test server-test
 
-.PHONY: test
+.PHONY: test build

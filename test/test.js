@@ -1,18 +1,18 @@
-var utils = require('../src');
+var utils = require(typeof module !== 'undefined' && module.exports ? '../src/index.js' : 'digger-utils');
 
 describe('digger-utils', function(){
 
 	it('should produce a digger id', function() {
 		var id = utils.diggerid();
 
-		id.should.be.a('string');
+		id.should.be.type('string');
 		id.length.should.equal(32);
 	})
 
 	it('should produce a littleid', function() {
 		var id = utils.littleid();
 
-		id.should.be.a('string');
+		id.should.be.type('string');
 		id.length.should.equal(6);
 	})
 

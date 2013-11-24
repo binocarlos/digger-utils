@@ -95,20 +95,6 @@ utils.toArray = function(args){
 
 /*
 
-  turn a digger url string into an object with:
-
-    * action (read | write)
-    * supplier_method (select | append | save | remove)
-    * diggerid (a digger context extracted from the url)
-    * selector (a single phase of selectors extracted from the url)
-  
-*/
-utils.parse_request = function(method, url){
-
-}
-
-/*
-
   does an object have some keys
   
 */
@@ -121,7 +107,7 @@ utils.is_object_empty = function(obj){
   exports a user object but removing its private fields first
   
 */
-utils.export_user = function(user){
+utils.strip_private_fields = function(user){
   var ret = {};
 
   for(var prop in user){
@@ -132,6 +118,8 @@ utils.export_user = function(user){
 
   return ret;
 }
+
+utils.export_user = utils.strip_private_fields;
 
 /**
  * jQuery Deep extend
