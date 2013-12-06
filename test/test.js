@@ -1,4 +1,4 @@
-var utils = require(typeof module !== 'undefined' && module.exports ? '../src/index.js' : 'digger-utils');
+var utils = require('../src');
 
 describe('digger-utils', function(){
 
@@ -155,4 +155,5 @@ describe('digger-utils', function(){
 
 		st.should.equal('world');
   })
+
 })

@@ -182,3 +182,7 @@ utils.inherits = function(ctor, superCtor) {
     }
   });
 };
+
+utils.is_server = function(){
+  return typeof module !== 'undefined' && module.exports;
+}

@@ -101,6 +101,12 @@ var tree_of_containers = utils.combine_tree_results(flat_list_of_containers);
 ## inherits
 A copy of node utils.inherits for inheriting classes
 
+## is_server
+Returns true if running on node.js - false if on the browser
+
+## moduleloader
+Takes 2 module names - one for node.js and one for the browser and requires the correct one
+
 # licence
 
 MIT
