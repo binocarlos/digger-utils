@@ -156,4 +156,27 @@ describe('digger-utils', function(){
 		st.should.equal('world');
   })
 
+  it('should strip dollars', function() {
+		var data = {
+			'$test':10,
+			sub:{
+				'$test2':20
+			}
+		}
+
+		data = utils.strip_dollars(data);
+
+		var val = data['$test'];
+
+		if(val){
+			throw new Error('value not removed');
+		}
+		
+		var val2 = data.sub['$test2'];
+
+		if(val2){
+			throw new Error('value2 not removed');
+		}
+  })
+
 })

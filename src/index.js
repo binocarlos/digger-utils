@@ -186,3 +186,19 @@ utils.inherits = function(ctor, superCtor) {
 utils.is_server = function(){
   return typeof module !== 'undefined' && module.exports;
 }
+
+utils.strip_dollars = function(obj){
+  var self = this;
+  Object.keys(obj || {}).forEach(function(field){
+    var val = obj[field];
+    if(('' + field).charAt(0)==='$'){
+      delete(obj[field]);
+    }
+    else{
+      if(typeof(val)==='object'){
+        obj[field] = self.strip_dollars(val);
+      }
+    }
+  })
+  return obj;
+}

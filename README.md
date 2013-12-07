@@ -10,9 +10,7 @@ as a node module:
 
 	$ npm install digger-utils
 
-as a [component](https://github.com/component/component):
-
-	$ component install binocarlos/digger-utils
+or in the browser using [browserify](https://github.com/substack/node-browserify)
 
 # methods
 
