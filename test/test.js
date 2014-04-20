@@ -179,4 +179,25 @@ describe('digger-utils', function(){
 		}
   })
 
+
+  it('should flatten a tree', function() {
+		var data = {
+			name:'top',
+			_children:[{
+				name:'middle',
+				_children:[{
+					name:'bottom'
+				}]
+			}]
+		}
+
+		var flat = utils.flatten_tree(data)
+
+		flat.length.should.equal(3)
+		flat[0].name.should.equal('top')
+		flat[1].name.should.equal('middle')
+		flat[2].name.should.equal('bottom')
+
+  })
+
 })

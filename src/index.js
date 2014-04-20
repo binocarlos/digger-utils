@@ -184,3 +184,18 @@ utils.strip_dollars = function(obj){
   })
   return obj;
 }
+
+utils.flatten_tree = function(model){
+  var arr = [];
+
+  var children = [].concat(model._children || [])
+  delete model._children
+
+  arr.push(model)
+
+  children.forEach(function(c){
+    arr = arr.concat(utils.flatten_tree(c))
+  })
+
+  return arr
+}
