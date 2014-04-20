@@ -1,6 +1,6 @@
 {
   "name": "digger-utils",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Utils library shared between the digger digger libraries",
   "main": "src/index.js",
   "scripts": {
