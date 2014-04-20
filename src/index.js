@@ -130,11 +130,15 @@ utils.combine_tree_results = function(results){
   // loop each result and it's links to see if we have a parent in the original results
   // or in these results
   results.forEach(function(result){
-    results_map[result._digger.path + '/' + result._digger.inode] = result;
+    var digger = result._digger
+    if(digger && digger.path && digger.inode){
+      results_map[digger.path + '/' + digger.inode] = result;  
+    }
   })
 
   results.forEach(function(result){
-    var parent = results_map[result._digger.path];
+    var digger = result._digger || {}
+    var parent = results_map[digger.path];
 
     if(parent){
       parent._children = parent._children || [];

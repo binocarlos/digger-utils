@@ -102,7 +102,6 @@ describe('digger-utils', function(){
 
 		var results = utils.combine_tree_results(arr);
 
-
 		results.length.should.equal(1);
 
 		results[0]._children[0]._children[0].a.should.equal(12)		
