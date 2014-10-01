@@ -2,6 +2,16 @@ var extend = require('extend');
 var hat = require('hat');
 var utils = module.exports = {};
 
+var baseUrl = '/digger'
+
+utils.urls = {
+  base:baseUrl,
+  merge:baseUrl + '/merge',
+  pipe:baseUrl + '/pipe',
+  ship:baseUrl + '/ship',
+  stream:baseUrl + '/stream'
+}
+
 /**
  * generate a new global id
  */
