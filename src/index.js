@@ -9,7 +9,8 @@ utils.urls = {
   merge:baseUrl + '/merge',
   pipe:baseUrl + '/pipe',
   ship:baseUrl + '/ship',
-  stream:baseUrl + '/stream'
+  stream:baseUrl + '/stream',
+  select:baseUrl + '/select'
 }
 
 /**
